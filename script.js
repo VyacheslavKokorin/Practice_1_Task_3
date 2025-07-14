@@ -13,13 +13,10 @@ const images = [
 
 let currentIndex = 0;
 
+const counterBlock = document.getElementById('counter');
 const img = document.getElementById('image');
 const prevBtn = document.getElementById('previous');
 const nextBtn = document.getElementById('next');
-
-function changeImage(index) {
-	img.src = images[index];
-}
 
 prevBtn.addEventListener('click', function() {
 	currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -29,4 +26,9 @@ prevBtn.addEventListener('click', function() {
 nextBtn.addEventListener('click', function() {
 	currentIndex = (currentIndex + 1) % images.length;
 	changeImage(currentIndex);
-})
+});
+
+function changeImage(index) {
+	img.src = images[index];
+	counterBlock.textContent = "Изображение " + (index + 1) + " из 10";
+}

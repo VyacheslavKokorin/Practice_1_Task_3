@@ -7,6 +7,11 @@ body {
 	margin: 0;
 }
 
+#counter {
+	font-size: 1.7em;
+	padding: 8px 20px;
+}
+
 #image {
 	max-width: 75vw;
 	max-height: 75vh;
