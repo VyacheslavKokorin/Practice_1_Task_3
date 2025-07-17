@@ -1,3 +1,4 @@
+// Массив путей изображений
 const images = [
 	'images/pic1.jpg',
 	'images/pic2.jpg',
@@ -11,13 +12,16 @@ const images = [
 	'images/pic10.jpg',
 ];
 
+// Задаём начало счётчика
 let currentIndex = 0;
 
+// Получаем доступ к элементам на странице
 const counterBlock = document.getElementById('counter');
 const img = document.getElementById('image');
 const prevBtn = document.getElementById('previous');
 const nextBtn = document.getElementById('next');
 
+// Функции обработки кнопок перелистывания, реализация зацикленности остаток от деления на длинну массива
 prevBtn.addEventListener('click', function() {
 	currentIndex = (currentIndex - 1 + images.length) % images.length;
 	changeImage(currentIndex);
@@ -28,6 +32,7 @@ nextBtn.addEventListener('click', function() {
 	changeImage(currentIndex);
 });
 
+// Функция для обновления счётчика изображений
 function changeImage(index) {
 	img.src = images[index];
 	counterBlock.textContent = "Изображение " + (index + 1) + " из 10";
