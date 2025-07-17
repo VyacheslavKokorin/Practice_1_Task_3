@@ -32,7 +32,7 @@ nextBtn.addEventListener('click', function() {
 	changeImage(currentIndex);
 });
 
-// Функция для обновления счётчика изображений
+// Функция для обновления счётчика изображений и самого изображения
 function changeImage(index) {
 	img.src = images[index];
 	counterBlock.textContent = "Изображение " + (index + 1) + " из 10";
